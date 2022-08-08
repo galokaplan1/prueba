@@ -11,7 +11,7 @@ const Cuentos =({navigation})=>{
 
   useEffect(() => {
     axios
-        .get("http://localhost:5000/contenidos/cuentos")
+        .get("http://localhost:5000/contenidos/contenido/cuento")
         .then((response) => {
           console.log(response.data)
             setcuentos(response.data);
@@ -23,13 +23,14 @@ const Cuentos =({navigation})=>{
   return (
     
     <View style={styles.fondo}>
-      
-
+      <View style={styles.margen}>
       {cuentos.map(obj => <Boton
-          text='abrir'
+          text={obj.titulo}
           onPress={ () =>{
               navigation.navigate('DescripcionCuentos')
             }}></Boton>)}
+
+      </View>
     </View>
     
   );
@@ -55,4 +56,11 @@ const Cuentos =({navigation})=>{
       color: 'blue',
       fontSize: 20
     },
+    fondo: {
+      backgroundColor : "#7fffd4",
+      flex: 1,
+    },
+    margen:{
+        marginTop: '25%'
+    }
   });

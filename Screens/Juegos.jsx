@@ -1,67 +1,40 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Alert} from 'react-native';
+import { StyleSheet, Text, View, Image} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Boton from '../components/Boton';
 import { useEffect,useState }from 'react';
 import JuegosListItem from '../components/JuegosListItem';
-import {getjuegos} from '../services/endPoints';
+import axios from 'axios';
   
 const Juegos =({navigation})=>{
 
   const [juegos, setjuegos] = useState([]);
 
   useEffect(() => {
-    getjuegos().then((response)=>{
-                setjuegos(response)
-                console.log("entro")
-                console.log(juegos)
-            })
-            .catch((e) => {
-                console.log("no entro")
-                console.log(e)
-                Alert.alert("Error")
-                });
+    axios
+        .get("http://localhost:5000/contenidos/juegos")
+        .then((response) => {
+          console.log(response.data)
+            setjuegos(response.data);
+        });
   }, [])
   
   navigation = useNavigation();
 
-  return (          
-     
-    <View style={styles.fondo} >
-    <View style={styles.margen}>
-    <Boton
-        text = 'Juegos'
-        onPress={ () =>{
-            navigation.navigate('Juegos')
-          }}
-    />
-    <Boton
-        text = 'Cuentos'
-        onPress={ () =>{
-            navigation.navigate('Cuentos')
-          }}
-    />
-    <Boton
-        text = 'Preguntas'
-        onPress={ () =>{
-            navigation.navigate('Preguntas')
-          }}
-    />
-    <Boton
-        text = 'Documentacion'
-        onPress={ () =>{
-            navigation.navigate('Documentacion')
-          }}
-    />
-    <Boton
-        text = 'Grupos Privados'
-        onPress={ () =>{
-            navigation.navigate('GruposPrivados')
-          }}
-    />
+  return (
+    
+    <View style={styles.fondo}>
+      <View style={styles.margen}>
+      {juegos.map(obj => <Boton
+          text={obj.nombre}
+          onPress={ () =>{
+              navigation.navigate('DescripcionJuegos')
+            }}></Boton>)}
+
+      </View>
+
     </View>
-  </View>
-  
+    
   );
 }
 
@@ -88,6 +61,9 @@ const Juegos =({navigation})=>{
     },
     fondo: {
       backgroundColor : "#7fffd4",
-
+      flex: 1,
+    },
+    margen:{
+        marginTop: '25%'
     }
   });
