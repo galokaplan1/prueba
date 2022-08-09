@@ -2,22 +2,24 @@ import React  from "react";
 import { Text , StyleSheet } from 'react-native';
 import {Card, Title ,Paragraph } from 'react-native-paper';
   
-const Card = () => {
+const Carta = (props) => {
+
+    const { title, text } = props
       
     return(
          
         <Card style={Styles.container}>
         <Card.Content>
-            <Title>{text}</Title>
+            <Title>{title}</Title>
         </Card.Content>
        <Card.Content>
-        <Paragraph>{Text}</Paragraph>
+        <Paragraph>{text}</Paragraph>
         </Card.Content>
       </Card>
          
     )
 }
-export default Card;
+export default Carta
   
 const Styles = StyleSheet.create({
     container :{

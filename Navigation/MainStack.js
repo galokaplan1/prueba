@@ -9,6 +9,8 @@ import Cuentos from '../Screens/Cuentos'
 import Preguntas from '../Screens/Preguntas'
 import Documentacion from '../Screens/Documentacion'
 import GruposPrivados from '../Screens/GruposPrivados'
+import DescripcionJuegos from '../Screens/DescripcionJuegos';
+import DescripcionCuentos from '../Screens/DescripcionCuentos';
 
 
 
@@ -52,7 +54,15 @@ return(
             component={ GruposPrivados }
 
         />
-         
+        <Stack.Screen
+            name='DescripcionJuegos'
+            component={ DescripcionJuegos }
+
+        />
+        <Stack.Screen
+            name='Descripcion Cuentos'
+            component={DescripcionCuentos }
+        />
          
 
     </Stack.Navigator>
