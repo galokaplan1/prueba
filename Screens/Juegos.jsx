@@ -28,7 +28,7 @@ const Juegos =({navigation})=>{
       {juegos.map(obj => <Boton
           text={obj.nombre}
           onPress={ () =>{
-              navigation.navigate('DescripcionJuegos')
+              navigation.navigate('DescripcionJuegos',{id:obj.Id_Juego})
             }}></Boton>)}
 
       </View>

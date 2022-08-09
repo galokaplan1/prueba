@@ -1,18 +1,18 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image} from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { TabRouter, useNavigation } from '@react-navigation/native';
 import Boton from '../components/Boton';
 import { useEffect,useState }from 'react';
 import axios from 'axios';
 import Carta from '../components/Card';
   
-const DescripcionJuegos =({navigation})=>{
+const DescripcionJuegos =({navigation, route})=>{
 
   const [desjuegos, setdesjuegos] = useState([]);
 
   useEffect(() => {
     axios
-        .get("http://localhost:5000/contenidos/juegos/:id")
+        .get("http://localhost:5000/contenidos/juegos/" + route.params.id)
         .then((response) => {
           console.log(response.data)
             setdesjuegos(response.data);
