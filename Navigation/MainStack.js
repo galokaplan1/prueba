@@ -50,7 +50,7 @@ return(
 
         />
         <Stack.Screen
-            name='Grupos Privados'
+            name='GruposPrivados'
             component={ GruposPrivados }
 
         />
@@ -60,7 +60,7 @@ return(
 
         />
         <Stack.Screen
-            name='Descripcion Cuentos'
+            name='DescripcionCuentos'
             component={DescripcionCuentos }
         />
          
