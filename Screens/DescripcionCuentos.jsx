@@ -1,21 +1,21 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image} from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { TabRouter, useNavigation } from '@react-navigation/native';
 import Boton from '../components/Boton';
 import { useEffect,useState }from 'react';
-import CuentosListItem from '../components/CuentosListItem';
 import axios from 'axios';
+import Carta from '../components/Card';
   
-const DescripcionCuentos =({navigation})=>{
+const DescripcionCuentos =({navigation, route})=>{
 
-  const [cuentos, setcuentos] = useState([]);
+  const [descuentos, setdescuentos] = useState([]);
 
   useEffect(() => {
     axios
-        .get("http://localhost:5000/contenidos/cuentos/:id")
+        .get("http://localhost:5000/contenidos/contenido/cuento/" + route.params.id)
         .then((response) => {
           console.log(response.data)
-            setcuentos(response.data);
+            setdescuentos(response.data);
         });
   }, [])
   
@@ -24,14 +24,15 @@ const DescripcionCuentos =({navigation})=>{
   return (
     
     <View style={styles.fondo}>
-      <Text style={styles.titulo}>{obj.Descripcion}</Text>
-      
+      <View style={styles.margen}>
+        <Carta
+         title={descuentos.titulo}
+         text={descuentos.descripcion}
+        >
 
-      {cuentos.map(obj => <Boton
-          text={obj.nombre}
-          onPress={ () =>{
-              navigation.navigate('Home')
-            }}></Boton>)}
+        </Carta>
+      </View>
+
     </View>
     
   );
@@ -60,6 +61,9 @@ const DescripcionCuentos =({navigation})=>{
     },
     fondo: {
       backgroundColor : "#7fffd4",
-
+      flex: 1,
+    },
+    margen:{
+        marginTop: '25%'
     }
   });

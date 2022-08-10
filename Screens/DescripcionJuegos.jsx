@@ -25,11 +25,12 @@ const DescripcionJuegos =({navigation, route})=>{
     
     <View style={styles.fondo}>
       <View style={styles.margen}>
-      {desjuegos.map(obj => <Carta
-          title={obj.nombre}
-          text={obj.descripcion}
-          ></Carta>)}
+        <Carta
+         title={desjuegos.nombre}
+         text={desjuegos.descripcion}
+        >
 
+        </Carta>
       </View>
 
     </View>

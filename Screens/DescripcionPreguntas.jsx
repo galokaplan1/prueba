@@ -1,21 +1,21 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image} from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { TabRouter, useNavigation } from '@react-navigation/native';
 import Boton from '../components/Boton';
 import { useEffect,useState }from 'react';
-import JuegosListItem from '../components/JuegosListItem';
 import axios from 'axios';
+import Carta from '../components/Card';
   
-const DescripcionPreguntas =({navigation})=>{
+const DescripcionPreguntas =({navigation, route})=>{
 
-  const [preguntas, setpreguntas] = useState([]);
+  const [despreguntas, setdespreguntas] = useState([]);
 
   useEffect(() => {
     axios
-        .get("http://localhost:5000/contenidos/preguntas/:id")
+        .get("http://localhost:5000/contenidos/preguntas/" + route.params.id)
         .then((response) => {
           console.log(response.data)
-            setpreguntas(response.data);
+            setdespreguntas(response.data);
         });
   }, [])
   
@@ -24,14 +24,15 @@ const DescripcionPreguntas =({navigation})=>{
   return (
     
     <View style={styles.fondo}>
-      <Text style={styles.titulo}>{obj.Descripcion}</Text>
-      
+      <View style={styles.margen}>
+        <Carta
+         title={despreguntas.pregunta}
+         text={despreguntas.respuesta}
+        >
 
-      {preguntas.map(obj => <Boton
-          text={obj.nombre}
-          onPress={ () =>{
-              navigation.navigate('Home')
-            }}></Boton>)}
+        </Carta>
+      </View>
+
     </View>
     
   );
@@ -60,6 +61,9 @@ const DescripcionPreguntas =({navigation})=>{
     },
     fondo: {
       backgroundColor : "#7fffd4",
-
+      flex: 1,
+    },
+    margen:{
+        marginTop: '25%'
     }
   });

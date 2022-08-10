@@ -1,20 +1,21 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image} from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { TabRouter, useNavigation } from '@react-navigation/native';
 import Boton from '../components/Boton';
 import { useEffect,useState }from 'react';
 import axios from 'axios';
+import Carta from '../components/Card';
+  
+const DescripcionDocumentos =({navigation, route})=>{
 
-const Documentacion =({navigation})=>{
-
-  const [documentacion, setdocumentacion] = useState([]);
+  const [desdocumentos, setdesdocumentos] = useState([]);
 
   useEffect(() => {
     axios
-        .get("http://localhost:5000/contenidos/contenido/documento")
+        .get("http://localhost:5000/contenidos/contenido/documento/" + route.params.id)
         .then((response) => {
           console.log(response.data)
-            setdocumentacion(response.data);
+            setdesdocumentos(response.data);
         });
   }, [])
   
@@ -24,19 +25,21 @@ const Documentacion =({navigation})=>{
     
     <View style={styles.fondo}>
       <View style={styles.margen}>
-      {documentacion.map(obj => <Boton
-          text={obj.titulo}
-          onPress={ () =>{
-              navigation.navigate('DescripcionDocumentos',{id:obj.Id_Contenido})
-            }}></Boton>)}
+        <Carta
+         title={desdocumentos.titulo}
+         text={desdocumentos.descripcion}
+        >
 
+        </Carta>
       </View>
+
     </View>
     
   );
 }
+
   
-  export default Documentacion
+  export default DescripcionDocumentos;
   
   const styles = StyleSheet.create({
     logo: {
@@ -53,7 +56,7 @@ const Documentacion =({navigation})=>{
     titulo: {
       position: 'absolute',
       top: '45%',
-      color: 'blue',
+      color: 'black',
       fontSize: 20
     },
     fondo: {

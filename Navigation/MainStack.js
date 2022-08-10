@@ -11,6 +11,8 @@ import Documentacion from '../Screens/Documentacion'
 import GruposPrivados from '../Screens/GruposPrivados'
 import DescripcionJuegos from '../Screens/DescripcionJuegos';
 import DescripcionCuentos from '../Screens/DescripcionCuentos';
+import DescripcionDocumentos from '../Screens/DescripcionDocumentos';
+import DescripcionPreguntas from '../Screens/DescripcionPreguntas';
 
 
 
@@ -62,6 +64,14 @@ return(
         <Stack.Screen
             name='DescripcionCuentos'
             component={DescripcionCuentos }
+        />
+        <Stack.Screen
+            name='DescripcionDocumentos'
+            component={DescripcionDocumentos }
+        />
+        <Stack.Screen
+            name='DescripcionPreguntas'
+            component={DescripcionPreguntas }
         />
          
 
