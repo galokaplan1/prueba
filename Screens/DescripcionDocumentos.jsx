@@ -12,10 +12,11 @@ const DescripcionDocumentos =({navigation, route})=>{
 
   useEffect(() => {
     axios
-        .get("http://localhost:5000/contenidos/contenido/documento/" + route.params.id)
+        .get("http://localhost:5000/contenidos/contenidos/" + route.params.id)
         .then((response) => {
           console.log(response.data)
             setdesdocumentos(response.data);
+            console.log(desdocumentos.titulo);
         });
   }, [])
   

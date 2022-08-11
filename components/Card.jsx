@@ -34,7 +34,10 @@ const Styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: 'bold',
     textAlign: 'center',
-    padding: 20
+    padding: 20,
+    marginTop:75
+
+    
   },
   title:{
     backgroundColor: `#008b8b`,
@@ -45,8 +48,10 @@ const Styles = StyleSheet.create({
         width: '50%',
         left: '25%',
         justifyContent:'center',
-        marginTop:45,
+        marginTop:5,
         textAlign: 'center',
+        position: 'absolute'
+        
   }
 });
 

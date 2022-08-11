@@ -28,6 +28,7 @@ const Preguntas =({navigation})=>{
       {preguntas.map(obj => <Boton
           text={obj.pregunta}
           onPress={ () =>{
+            console.log(obj.Id_Pregunta);
               navigation.navigate('DescripcionPreguntas',{id:obj.Id_Pregunta})
             }}></Boton>)}
 
