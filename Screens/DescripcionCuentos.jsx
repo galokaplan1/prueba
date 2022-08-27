@@ -12,7 +12,7 @@ const DescripcionCuentos =({navigation, route})=>{
 
   useEffect(() => {
     axios
-        .get("http://localhost:5000/contenidos/contenidos/" + route.params.id)
+        .get("https://jsonplaceholder.typicode.com/users/1" )
         .then((response) => {
           console.log(response.data)
             setdescuentos(response.data);
@@ -26,14 +26,17 @@ const DescripcionCuentos =({navigation, route})=>{
     <View style={styles.fondo}>
       <View style={styles.margen}>
         <Carta
-         title={descuentos.titulo}
-         text={descuentos.descripcion}
+         title={descuentos.name}
+         text={descuentos.email}
         >
 
         </Carta>
       </View>
 
     </View>
+
+
+
     
   );
 }
@@ -64,6 +67,6 @@ const DescripcionCuentos =({navigation, route})=>{
       flex: 1,
     },
     margen:{
-        marginTop: '25%'
+        marginTop: '20%'
     }
   });

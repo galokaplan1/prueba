@@ -11,7 +11,7 @@ const Cuentos =({navigation})=>{
 
   useEffect(() => {
     axios
-        .get("http://localhost:5000/contenidos/contenido/cuento")
+        .get("https://jsonplaceholder.typicode.com/users")
         .then((response) => {
           console.log(response.data)
             setcuentos(response.data);
@@ -25,9 +25,9 @@ const Cuentos =({navigation})=>{
     <View style={styles.fondo}>
       <View style={styles.margen}>
       {cuentos.map(obj => <Boton
-          text={obj.titulo}
+          text={obj.name}
           onPress={ () =>{
-              navigation.navigate('DescripcionCuentos',{id:obj.Id_Contenido})
+              navigation.navigate('DescripcionCuentos',{id:obj.Id_Equipment})
             }}></Boton>)}
 
       </View>
