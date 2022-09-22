@@ -35,9 +35,9 @@ const Home =({navigation})=>{
               }}
         />
         <Boton
-            text = 'Grupos Privados'
+            text = 'Agregar'
             onPress={ () =>{
-                navigation.navigate('GruposPrivados')
+                navigation.navigate('Agregar')
               }}
         />
         </View>

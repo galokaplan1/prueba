@@ -8,11 +8,11 @@ import Juegos from '../Screens/Juegos'
 import Cuentos from '../Screens/Cuentos'
 import Preguntas from '../Screens/Preguntas'
 import Documentacion from '../Screens/Documentacion'
-import GruposPrivados from '../Screens/GruposPrivados'
 import DescripcionJuegos from '../Screens/DescripcionJuegos';
 import DescripcionCuentos from '../Screens/DescripcionCuentos';
 import DescripcionDocumentos from '../Screens/DescripcionDocumentos';
 import DescripcionPreguntas from '../Screens/DescripcionPreguntas';
+import Agregar from '../Screens/Agregar';
 
 
 
@@ -52,8 +52,8 @@ return(
 
         />
         <Stack.Screen
-            name='GruposPrivados'
-            component={ GruposPrivados }
+            name='Agregar'
+            component={ Agregar }
 
         />
         <Stack.Screen
