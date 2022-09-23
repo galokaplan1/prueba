@@ -20,6 +20,7 @@ const Juegos =({navigation})=>{
   }, [])
   
   navigation = useNavigation();
+  console.log(juegos);
 
   return (
     
@@ -28,7 +29,7 @@ const Juegos =({navigation})=>{
       {juegos.map(obj => <Boton
           text={obj.nombre}
           onPress={ () =>{
-              navigation.navigate('DescripcionJuegos',{id:obj.Id_Juego})
+              navigation.navigate('DescripcionJuegos',{id:obj.id_juego})
             }}></Boton>)}
 
       </View>

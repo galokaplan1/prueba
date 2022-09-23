@@ -12,7 +12,7 @@ const DescripcionCuentos =({navigation, route})=>{
 
   useEffect(() => {
     axios
-        .get("http://localhost:5000/contenidos/contenido/cuento/" + route.params.id )
+        .get("http://localhost:5000/contenidos/contenidos/" + route.params.id )
         .then((response) => {
           console.log(response.data)
             setdescuentos(response.data);
@@ -26,8 +26,8 @@ const DescripcionCuentos =({navigation, route})=>{
     <View style={styles.fondo}>
       <View style={styles.margen}>
         <Carta
-         title={descuentos.name}
-         text={descuentos.email}
+         title={descuentos.titulo}
+         text={descuentos.descripcion}
         >
 
         </Carta>

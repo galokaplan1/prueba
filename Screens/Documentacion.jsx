@@ -27,7 +27,7 @@ const Documentacion =({navigation})=>{
       {documentacion.map(obj => <Boton
           text={obj.titulo}
           onPress={ () =>{
-              navigation.navigate('DescripcionDocumentos',{id:obj.Id_Contenido})
+              navigation.navigate('DescripcionDocumentos',{id:obj.id_contenido})
             }}></Boton>)}
 
       </View>
