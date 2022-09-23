@@ -12,7 +12,7 @@ const DescripcionCuentos =({navigation, route})=>{
 
   useEffect(() => {
     axios
-        .get("https://jsonplaceholder.typicode.com/users/1" )
+        .get("http://localhost:5000/contenidos/contenido/cuento/" + route.params.id )
         .then((response) => {
           console.log(response.data)
             setdescuentos(response.data);

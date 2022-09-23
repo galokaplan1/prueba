@@ -5,15 +5,12 @@ import Boton from "../components/Boton";
 import { useState, useEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
-import { useContextState, ActionTypes } from '../contextState';
 import Boton2 from '../components/Boton2';
 
 
 
-
-const Login =({navigation})=>{
-  const {contextState, setContextState}= useContextState();
-
+const Register =({navigation})=>{
+  
     navigation = useNavigation();
     const [Usuario, setUsuario] = useState({
       email: '',
@@ -22,30 +19,25 @@ const Login =({navigation})=>{
   });  
 
 
-  const login = async (Usuario) => {
+  const register = async (Usuario) => {
       axios
-          .post("http://localhost:5000/usuario/login",{
+          .post("http://localhost:5000/usuario/register",{
             email : Usuario.email,
             contraseña : Usuario.contraseña,
           })
           .then((response) => {
-            console.log(response.data.id)
-            let id = response.data
-            setContextState({
-              type:ActionTypes.SetId,
-              value: response.data.id
-            })
+            console.log(response.data)
           });
   }
 
 
 
-  const Login = async () => {
+  const Registrar = async () => {
     if (!Usuario.email || !Usuario.contraseña ) {
       console.log("Llenar todos los datos");
     } else {
-          await login(Usuario).then(() => {
-          navigation.navigate('Home');  
+          await register(Usuario).then(() => {
+          navigation.navigate('Login');  
         });
     }
   }
@@ -55,28 +47,14 @@ const Login =({navigation})=>{
       
       <View style = {styles.fondo}>
             <View style={styles.container}>
-            <Text>Inicio de sesion</Text>
+            <Text>Crear Usuario</Text>
             
             <TextInput style={styles.input} placeholder="Email" value={Usuario.email} onChangeText={text => setUsuario({ ...Usuario, email: text })}/>
             <TextInput style={styles.input} placeholder="Contraseña" value={Usuario.contraseña} onChangeText={text => setUsuario({ ...Usuario, contraseña: text })}/>
 
         
             
-             <Boton2  text={'Iniciar sesion'} onPress={Login}/> 
-             <Boton2
-            text = 'Crear Cuenta'
-            onPress={ () =>{
-                navigation.navigate('Register')
-              }}
-        />
-
-             <Boton2
-                text = 'Omitir'
-                onPress={ () =>{
-                    navigation.navigate('Home')
-                  }}
-             />
-      
+             <Boton2  text={'Crear Cuenta'} onPress={Registrar}/> 
             
              </View>
         </View>
@@ -84,7 +62,7 @@ const Login =({navigation})=>{
     );
   }
   
-  export default Login
+  export default Register
   
   const styles = StyleSheet.create({
     container: {

@@ -13,6 +13,8 @@ import DescripcionCuentos from '../Screens/DescripcionCuentos';
 import DescripcionDocumentos from '../Screens/DescripcionDocumentos';
 import DescripcionPreguntas from '../Screens/DescripcionPreguntas';
 import Agregar from '../Screens/Agregar';
+import Login from '../Screens/Login';
+import Register from '../Screens/Register';
 
 
 
@@ -23,6 +25,10 @@ const MainStack =()=>{
 return(
 <NavigationContainer>
     <Stack.Navigator>
+        <Stack.Screen
+            name='Login'
+            component={ Login }
+        />
 
         <Stack.Screen
 
@@ -73,7 +79,10 @@ return(
             name='DescripcionPreguntas'
             component={DescripcionPreguntas }
         />
-         
+        <Stack.Screen
+            name='Register'
+            component={Register }
+        />
 
     </Stack.Navigator>
 </NavigationContainer>
@@ -84,19 +93,3 @@ return(
 }
 
 export default MainStack
-
-const style = StyleSheet.create({
-    buttonContainer:{
-        backgroundColor: 'green',
-        marginBottom: 10,
-        paddingHorizontal:20,
-        paddingHorizontal:10,
-
-    },
-    buttonText:{
-    color:'white'
-    }
-
-
-
-    })

@@ -1,14 +1,26 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TextInput} from 'react-native';
-
+import { StyleSheet, Text, View, Image, TextInput, Picker} from 'react-native';
+import SelectList from 'react-native-dropdown-select-list';
 import Boton from "../components/Boton";
 import { useState, useEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
+import { useContextState } from '../contextState.js';
+import Boton2 from '../components/Boton2';
+
+
 
 const Agregar =({navigation})=>{
+  navigation = useNavigation();
+  const {contextState, setContextState}= useContextState();
+  useEffect (async() => {
+    
+    if(!contextState.id){
+      navigation.navigate("Login")
+    }
+  },[]);
   
-    navigation = useNavigation();
+    
     const [Contenido, setContenido] = useState({
       contenido: '',
       descripcion: '',
@@ -17,9 +29,9 @@ const Agregar =({navigation})=>{
   });  
 
 
-  const postContenidos = async (Contenido) => {
 
-    useEffect(() => {
+
+  const postContenidos = async (Contenido) => {
       axios
           .post("http://localhost:5000/contenidos/agregar",{
             contenido : Contenido.contenido,
@@ -30,8 +42,6 @@ const Agregar =({navigation})=>{
           .then((response) => {
             console.log(response.data)
           });
-    }, [])
-
   }
 
 
@@ -45,19 +55,25 @@ const Agregar =({navigation})=>{
         });
     }
   }
+  
+
     return (
       
       <View style = {styles.fondo}>
-            
+            <View style={styles.container}>
             <Text>Agregar Contenido</Text>
             
             <TextInput style={styles.input} placeholder="Contenido" value={Contenido.contenido} onChangeText={text => setContenido({ ...Contenido, contenido: text })}/>
+
+          
+
             <TextInput style={styles.input} placeholder="Descripcion" value={Contenido.descripcion} onChangeText={text => setContenido({ ...Contenido, descripcion: text })}/>
             <TextInput style={styles.input} placeholder="Edad" value={Contenido.edad} onChangeText={Number => setContenido({ ...Contenido, edad: Number })}/>
             <TextInput style={styles.input} placeholder="Titulo" value={Contenido.titulo} onChangeText={text => setContenido({ ...Contenido, titulo: text })}/>
             
+             <Boton2  text={'Agregar'} onPress={AgregarBoton}/> 
             
-            <CustomButton text={'Agregar'} onPress={AgregarBoton}/>
+             </View>
         </View>
       
     );
