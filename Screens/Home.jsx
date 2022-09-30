@@ -1,15 +1,23 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, Alert} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Boton from '../components/Boton';
+import CustomLogo from '../components/CustomLogo';
+import PreguntaLogo from '../components/PreguntaLogo';
 
 const Home =({navigation})=>{
   
     navigation = useNavigation();
     return (
-      
+  
+ 
       <View style={styles.fondo} >
         <View style={styles.margen}>
+        
+        <PreguntaLogo />
+
+        <CustomLogo onPress={() => navigation.navigate('Home')}/>
+        
         <Boton
             text = 'Juegos'
             onPress={ () =>{
@@ -78,6 +86,6 @@ const Home =({navigation})=>{
       flex: 1,
     },
     margen:{
-        marginTop: '25%'
+        marginTop: '10%'
     }
   });

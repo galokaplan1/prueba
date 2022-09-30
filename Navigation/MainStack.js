@@ -25,10 +25,7 @@ const MainStack =()=>{
 return(
 <NavigationContainer>
     <Stack.Navigator>
-        <Stack.Screen
-            name='Login'
-            component={ Login }
-        />
+        
 
         <Stack.Screen
 
@@ -36,6 +33,10 @@ return(
             name='Home'
             component={ Home }
 
+        />
+        <Stack.Screen
+            name='Login'
+            component={ Login }
         />
          <Stack.Screen
             name='Juegos'

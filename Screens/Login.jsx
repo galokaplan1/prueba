@@ -45,7 +45,7 @@ const Login =({navigation})=>{
       console.log("Llenar todos los datos");
     } else {
           await login(Usuario).then(() => {
-          navigation.navigate('Home');  
+          navigation.navigate('Agregar');  
         });
     }
   }
@@ -55,6 +55,8 @@ const Login =({navigation})=>{
       
       <View style = {styles.fondo}>
             <View style={styles.container}>
+
+    
             <Text>Inicio de sesion</Text>
             
             <TextInput style={styles.input} placeholder="Email" value={Usuario.email} onChangeText={text => setUsuario({ ...Usuario, email: text })}/>
@@ -108,5 +110,15 @@ const Login =({navigation})=>{
       margin: 12,
       borderWidth: 1,
       padding: 10
+    },
+
+    logo:{
+     width: 100,
+     height: 100,
+      marginBottom: 15
+
+
     }
+
+
   });
