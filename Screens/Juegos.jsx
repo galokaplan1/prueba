@@ -5,6 +5,7 @@ import Boton from '../components/Boton';
 import { useEffect,useState }from 'react';
 import JuegosListItem from '../components/JuegosListItem';
 import axios from 'axios';
+import Boton3 from '../components/Boton3';
   
 const Juegos =({navigation})=>{
 
@@ -26,11 +27,11 @@ const Juegos =({navigation})=>{
     
     <View style={styles.fondo}>
       <View style={styles.margen}>
-      {juegos.map(obj => <Boton
+      {juegos.map(obj => <Boton3
           text={obj.nombre}
           onPress={ () =>{
               navigation.navigate('DescripcionJuegos',{id:obj.id_juego})
-            }}></Boton>)}
+            }}></Boton3>)}
 
       </View>
 

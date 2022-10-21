@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-const Boton = (props) => {
+const Boton3 = (props) => {
 
     const { onPress, text } = props
 
@@ -21,7 +21,7 @@ const Boton = (props) => {
     )
 }
 
-export default Boton
+export default Boton3
 
 
 const style = StyleSheet.create({
@@ -34,7 +34,7 @@ const style = StyleSheet.create({
         backgroundColor: `#008b8b`,
         borderWidth:2,
         borderColor: 'lightblue',
-        borderRadius: 1,
+        borderRadius: 2,
         padding: 15,
         width: '50%',
         left: '25%',

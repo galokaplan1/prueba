@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import Boton from '../components/Boton';
 import { useEffect,useState }from 'react';
 import axios from 'axios';
+import Boton3 from '../components/Boton3';
 
 const Cuentos =({navigation})=>{
 
@@ -25,11 +26,11 @@ const Cuentos =({navigation})=>{
     
     <View style={styles.fondo}>
       <View style={styles.margen}>
-      {cuentos.map(obj => <Boton
+      {cuentos.map(obj => <Boton3
           text={obj.titulo}
           onPress={ () =>{
               navigation.navigate('DescripcionCuentos',{id:obj.id_contenido})
-            }}></Boton>)}
+            }}></Boton3>)}
 
       </View>
     </View>

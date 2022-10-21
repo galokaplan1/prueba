@@ -24,11 +24,11 @@ const Documentacion =({navigation})=>{
     
     <View style={styles.fondo}>
       <View style={styles.margen}>
-      {documentacion.map(obj => <Boton
+      {documentacion.map(obj => <Boton3
           text={obj.titulo}
           onPress={ () =>{
               navigation.navigate('DescripcionDocumentos',{id:obj.id_contenido})
-            }}></Boton>)}
+            }}></Boton3>)}
 
       </View>
     </View>

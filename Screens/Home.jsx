@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity, Alert} from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, Alert, ImageBackground} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Boton from '../components/Boton';
 import CustomLogo from '../components/CustomLogo';
@@ -10,8 +10,9 @@ const Home =({navigation})=>{
     navigation = useNavigation();
     return (
   
+    <ImageBackground source={require("../assets/fondo.jpg")} resizeMode="cover"  style={styles.image} >
  
-      <View style={styles.fondo} >
+      <View >
         <View style={styles.margen}>
         
         <PreguntaLogo />
@@ -50,6 +51,7 @@ const Home =({navigation})=>{
         />
         </View>
       </View>
+      </ImageBackground>
       
     );
   }
@@ -65,10 +67,12 @@ const Home =({navigation})=>{
       top: '700%',
       left:'30%'
   },
+  
     image: {
       height:'100%',
-      alignItems: 'center',
+      //flex: 1
     },
+    
     titulo: {
       position: 'absolute',
       top: '45%',
@@ -81,10 +85,7 @@ const Home =({navigation})=>{
         backgroundColor: "#blue",
         padding: 10
     },
-    fondo: {
-      backgroundColor : "#7fffd4",
-      flex: 1,
-    },
+    
     margen:{
         marginTop: '10%'
     }
