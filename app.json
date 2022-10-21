@@ -1,11 +1,44 @@
 {
-  "expo": {
-    "name": "prueba",
+  
+
+
+"expo": {
+  "name": "prueba",
     "slug": "prueba",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+  "orientation": "portrait",
+  "icon": "./assets/loguito.png",
+  "userInterfaceStyle": "light",
+  "splash": {
+    "image": "./assets/splash.png",
+    "resizeMode": "contain",
+    "backgroundColor": "#ffffff"
   },
-  "name": "prueba"
+  "updates": {
+    "fallbackToCacheTimeout": 0
+  },
+  "assetBundlePatterns": [
+    "**/*"
+  ],
+  "ios": {
+    "supportsTablet": true
+  },
+  "android": {
+    "adaptiveIcon": {
+      
+      "backgroundColor": "#FFFFFF"
+    }
+  },
+  "web": {
+    "favicon": "./assets/splash.png",
+    "splash": {
+      "image": "./assets/loguito.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    }
+  }
+}
 }
