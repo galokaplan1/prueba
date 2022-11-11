@@ -4,6 +4,8 @@ import { useNavigation } from '@react-navigation/native';
 import Boton from '../components/Boton';
 import { useEffect,useState }from 'react';
 import axios from 'axios';
+import { ImageBackground } from 'react-native-web';
+import Boton3 from '../components/Boton3';
 
 const Documentacion =({navigation})=>{
 
@@ -21,7 +23,7 @@ const Documentacion =({navigation})=>{
   navigation = useNavigation();
 
   return (
-    
+    <ImageBackground source={require("../assets/fondo.jpg")} resizeMode="cover"  style={styles.image} >
     <View style={styles.fondo}>
       <View style={styles.margen}>
       {documentacion.map(obj => <Boton3
@@ -32,7 +34,7 @@ const Documentacion =({navigation})=>{
 
       </View>
     </View>
-    
+    </ImageBackground>
   );
 }
   
@@ -57,7 +59,6 @@ const Documentacion =({navigation})=>{
       fontSize: 20
     },
     fondo: {
-      backgroundColor : "#7fffd4",
       flex: 1,
     },
     margen:{

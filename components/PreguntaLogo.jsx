@@ -21,9 +21,11 @@ const PreguntaLogo = () => {
             <Image 
                 style = {styles.logo}
                 source={require("../assets/signo.png")}
+                resizeMode="contain"
             />
             </Pressable>
             <Alert
+            style = {styles.alerta}
                 show={showAlert}
                 message="REllenANDO es una app para facilitar materiales, actividades y contenidos a todos aquellos madrijim que tengan un bache sin saber que hacer, además es una excelente herramienta para elegir qué hacer en esos momentos aburridos con amigos, gente del trabajo, familia o cualquier otra persona para poder pasar un lindo momento juntos."
                 closeOnTouchOutside={true}
@@ -37,11 +39,15 @@ const styles = StyleSheet.create({
         
     },
     logo: {
-      width: 20,
-      height: 20,
+      width: 30,
+      height: 30,
       left: "85%"
       
     },
+    alerta:{
+    
+
+    }
   });
 
 export default PreguntaLogo;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image} from 'react-native';
+import { StyleSheet, Text, View, Image, ImageBackground} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Boton from '../components/Boton';
 import { useEffect,useState }from 'react';
@@ -24,7 +24,7 @@ const Juegos =({navigation})=>{
   console.log(juegos);
 
   return (
-    
+    <ImageBackground source={require("../assets/fondo.jpg")} resizeMode="cover"  style={styles.image} >
     <View style={styles.fondo}>
       <View style={styles.margen}>
       {juegos.map(obj => <Boton3
@@ -36,7 +36,7 @@ const Juegos =({navigation})=>{
       </View>
 
     </View>
-    
+</ImageBackground>
   );
 }
 
@@ -62,7 +62,7 @@ const Juegos =({navigation})=>{
       fontSize: 20
     },
     fondo: {
-      backgroundColor : "#7fffd4",
+      
       flex: 1,
     },
     margen:{

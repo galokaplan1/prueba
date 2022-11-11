@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TextInput, Picker} from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, Picker, ImageBackground} from 'react-native';
 import SelectList from 'react-native-dropdown-select-list';
 import Boton from "../components/Boton";
 import { useState, useEffect } from 'react';
@@ -44,7 +44,7 @@ const Register =({navigation})=>{
   
 
     return (
-      
+      <ImageBackground source={require("../assets/fondo.jpg")} resizeMode="cover"  style={styles.image} >
       <View style = {styles.fondo}>
             <View style={styles.container}>
             <Text>Crear Usuario</Text>
@@ -58,7 +58,7 @@ const Register =({navigation})=>{
             
              </View>
         </View>
-      
+      </ImageBackground>
     );
   }
   
@@ -71,7 +71,7 @@ const Register =({navigation})=>{
         flex:1
     },
     fondo: {
-      backgroundColor : "#7fffd4",
+      
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',

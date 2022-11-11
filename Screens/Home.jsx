@@ -14,8 +14,8 @@ const Home =({navigation})=>{
  
       <View >
         <View style={styles.margen}>
+        <PreguntaLogo/>
         
-        <PreguntaLogo />
 
         <CustomLogo onPress={() => navigation.navigate('Home')}/>
         
@@ -49,6 +49,7 @@ const Home =({navigation})=>{
                 navigation.navigate('Agregar')
               }}
         />
+        
         </View>
       </View>
       </ImageBackground>

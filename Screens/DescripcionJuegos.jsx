@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image} from 'react-native';
+import { StyleSheet, Text, View, Image, ImageBackground} from 'react-native';
 import { TabRouter, useNavigation } from '@react-navigation/native';
 import Boton from '../components/Boton';
 import { useEffect,useState }from 'react';
@@ -22,7 +22,7 @@ const DescripcionJuegos =({navigation, route})=>{
   navigation = useNavigation();
 
   return (
-    
+    <ImageBackground source={require("../assets/fondo.jpg")} resizeMode="cover"  style={styles.image} >
     <View style={styles.fondo}>
       <View style={styles.margen}>
         <Carta
@@ -34,7 +34,7 @@ const DescripcionJuegos =({navigation, route})=>{
       </View>
 
     </View>
-    
+    </ImageBackground>
   );
 }
 
@@ -60,7 +60,7 @@ const DescripcionJuegos =({navigation, route})=>{
       fontSize: 20
     },
     fondo: {
-      backgroundColor : "#7fffd4",
+      
       flex: 1,
     },
     margen:{

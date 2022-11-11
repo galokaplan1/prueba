@@ -25,10 +25,13 @@ export default Carta
 const Styles = StyleSheet.create({
   container :{
     alignContent:'center',
-    margin:17,
+    margin:0,
     flex: 1,
     justifyContent: 'center',
     padding: 0,
+    borderRadius: 5 ,
+    backgroundColor: ("#008B8B"),
+    opacity: '70%' 
 
 },
 paragraph: {
