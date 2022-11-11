@@ -7,6 +7,8 @@ import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
 import { useContextState } from '../contextState.js';
 import Boton2 from '../components/Boton2';
+import Boton4 from '../components/Boton4';
+import CustomLogo from '../components/CustomLogo';
 
 
 
@@ -61,6 +63,7 @@ const Agregar =({navigation})=>{
       <ImageBackground source={require("../assets/fondo.jpg")} resizeMode="cover"  style={styles.image} >
       <View style = {styles.fondo}>
             <View style={styles.container}>
+            <CustomLogo onPress={() => navigation.navigate('Home')}/>
             <Text>Agregar Contenido</Text>
             
             <TextInput style={styles.input} placeholder="Contenido" value={Contenido.contenido} onChangeText={text => setContenido({ ...Contenido, contenido: text })}/>
@@ -71,7 +74,7 @@ const Agregar =({navigation})=>{
             <TextInput style={styles.input} placeholder="Edad" value={Contenido.edad} onChangeText={Number => setContenido({ ...Contenido, edad: Number })}/>
             <TextInput style={styles.input} placeholder="Titulo" value={Contenido.titulo} onChangeText={text => setContenido({ ...Contenido, titulo: text })}/>
             
-             <Boton2  text={'Agregar'} onPress={AgregarBoton}/> 
+             <Boton4  text={'Agregar'} onPress={AgregarBoton}/> 
             
              </View>
         </View>
@@ -94,7 +97,7 @@ const Agregar =({navigation})=>{
       justifyContent: 'center',
     },
     input:{
-      
+      backgroundColor:'white',
       borderColor: 'black',
       borderRadius: 5, //lo curva del borde
       paddingHorizontal: 10,
@@ -103,5 +106,9 @@ const Agregar =({navigation})=>{
       margin: 12,
       borderWidth: 1,
       padding: 10
+    },
+    image:{
+      height: '100%',
+      width:'100%'  
     }
   });

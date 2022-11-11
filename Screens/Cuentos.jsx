@@ -59,10 +59,12 @@ const Cuentos =({navigation})=>{
       fontSize: 20
     },
     fondo: {
-    
+    flexDirection:'row',
+    flexWrap:'wrap',
       flex: 1,
     },
     margen:{
-        marginTop: '25%'
+        marginTop: '25%',
+        flexDirection:'row'
     }
   });

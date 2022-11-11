@@ -7,6 +7,10 @@ import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
 import { useContextState, ActionTypes } from '../contextState';
 import Boton2 from '../components/Boton2';
+import Boton4 from '../components/Boton4';
+import CustomLogo from '../components/CustomLogo';
+import { Title } from 'react-native-paper';
+
 
 
 
@@ -53,26 +57,26 @@ const Login =({navigation})=>{
 
     return (
       <ImageBackground source={require("../assets/fondo.jpg")} resizeMode="cover"  style={styles.image} >
+
       <View style = {styles.fondo}>
             <View style={styles.container}>
 
-    
-            <Text>Inicio de sesion</Text>
-            
+     <CustomLogo onPress={() => navigation.navigate('Home')}/>
+     <Title style={styles.titulo}>Inicio de sesion</Title>
             <TextInput style={styles.input} placeholder="Email" value={Usuario.email} onChangeText={text => setUsuario({ ...Usuario, email: text })}/>
             <TextInput style={styles.input} placeholder="Contraseña" value={Usuario.contraseña} onChangeText={text => setUsuario({ ...Usuario, contraseña: text })}/>
 
         
             
              <Boton2  text={'Iniciar sesion'} onPress={Login}/> 
-             <Boton2
+             <Boton4
             text = 'Crear Cuenta'
             onPress={ () =>{
                 navigation.navigate('Register')
               }}
         />
 
-             <Boton2
+             <Boton4
                 text = 'Omitir'
                 onPress={ () =>{
                     navigation.navigate('Home')
@@ -99,6 +103,7 @@ const Login =({navigation})=>{
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
+      
     },
     input:{
       backgroundColor: 'white',
@@ -111,14 +116,18 @@ const Login =({navigation})=>{
       borderWidth: 1,
       padding: 10
     },
-
-    logo:{
-     width: 100,
-     height: 100,
-      marginBottom: 15
-
-
+    image:{
+      height: '100%',
+      width:'100%'  
+    },
+    titulo:{
+      fontSize: 22,
+      marginBottom: '14%',
+      color: 'white'
     }
+    
+
+    
 
 
   });

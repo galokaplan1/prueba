@@ -14,7 +14,7 @@ const Home =({navigation})=>{
  
       <View >
         <View style={styles.margen}>
-        <PreguntaLogo/>
+        
         
 
         <CustomLogo onPress={() => navigation.navigate('Home')}/>
@@ -50,9 +50,12 @@ const Home =({navigation})=>{
               }}
         />
         
+        <PreguntaLogo/>
+
         </View>
       </View>
       </ImageBackground>
+
       
     );
   }

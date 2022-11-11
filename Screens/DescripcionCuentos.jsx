@@ -25,7 +25,7 @@ const DescripcionCuentos =({navigation, route})=>{
     <ImageBackground source={require("../assets/fondo.jpg")} resizeMode="cover"  style={styles.image} >
     <View style={styles.fondo}>
       <View style={styles.margen}>
-        <Carta
+        <Carta style={styles.cartita}
          title={descuentos.titulo}
          text={descuentos.descripcion}
         >
@@ -68,5 +68,9 @@ const DescripcionCuentos =({navigation, route})=>{
     },
     margen:{
         marginTop: '20%'
+    },
+    cartita:{
+
+
     }
   });

@@ -6,7 +6,8 @@ import { useState, useEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
 import Boton2 from '../components/Boton2';
-
+import Boton4 from '../components/Boton4';
+import CustomLogo from '../components/CustomLogo';
 
 
 const Register =({navigation})=>{
@@ -44,9 +45,10 @@ const Register =({navigation})=>{
   
 
     return (
-      <ImageBackground source={require("../assets/fondo.jpg")} resizeMode="cover"  style={styles.image} >
+      <ImageBackground source={require("../assets/fondo.jpg")} resizeMode="strech"  style={styles.image} >
       <View style = {styles.fondo}>
             <View style={styles.container}>
+            <CustomLogo onPress={() => navigation.navigate('Home')}/>
             <Text>Crear Usuario</Text>
             
             <TextInput style={styles.input} placeholder="Email" value={Usuario.email} onChangeText={text => setUsuario({ ...Usuario, email: text })}/>
@@ -54,7 +56,7 @@ const Register =({navigation})=>{
 
         
             
-             <Boton2  text={'Crear Cuenta'} onPress={Registrar}/> 
+             <Boton4  text={'Crear Cuenta'} onPress={Registrar}/> 
             
              </View>
         </View>
@@ -86,5 +88,9 @@ const Register =({navigation})=>{
       margin: 12,
       borderWidth: 1,
       padding: 10
+    },
+    image:{
+      height: '100%',
+      width:'100%'  
     }
   });

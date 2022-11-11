@@ -41,8 +41,8 @@ const styles = StyleSheet.create({
     logo: {
       width: 30,
       height: 30,
-      left: "85%"
-      
+      left: "90%",
+      top:"300%"
     },
     alerta:{
     

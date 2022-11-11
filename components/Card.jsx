@@ -8,7 +8,7 @@ const Carta = (props) => {
       
     return(
          
-      <Card>
+      <Card style={Styles.cartita}>
       <Card.Content style={Styles.container}>
         <Title style={Styles.title}>{title}</Title>
         <Paragraph style={Styles.paragraph}>{text} </Paragraph>
@@ -29,14 +29,16 @@ const Styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     padding: 0,
-    borderRadius: 5 ,
-    backgroundColor: ("#008B8B"),
-    opacity: '70%' 
+    borderRadius: 4 ,
+    backgroundColor: ("#008b8b"),
+    opacity: '70%', 
+    
+    
 
 },
 paragraph: {
 fontSize: 14,
-
+color:'white', 
 textAlign: 'center',
 paddingLeft: 2,
 paddingHorizontal: 2,
@@ -47,10 +49,16 @@ marginRight:20
 
 },
 title:{
-fontSize: 20,
+fontSize: 33,
 textAlign: 'center',
 padding: 10,
-marginTop:5
+marginTop:5,
+color:'#483d8b'
     
+},
+cartita:{
+  margin: 20,
+  borderColor: 'lightblue'
+ 
 }
 });

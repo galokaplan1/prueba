@@ -66,6 +66,7 @@ const Preguntas =({navigation})=>{
       flex: 1,
     },
     margen:{
-        marginTop: '25%'
+        marginTop: '25%',
+        flexDirection:'row'
     }
   });
