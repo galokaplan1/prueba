@@ -26,7 +26,7 @@ const Cuentos =({navigation})=>{
     <ImageBackground source={require("../assets/fondo.jpg")} resizeMode="cover"  style={styles.image} >
     <View style={styles.fondo}>
       <View style={styles.margen}>
-      {cuentos.map(obj => <Boton3
+      {cuentos.map(obj => <Boton3 style={styles.orden} 
           text={obj.titulo}
           onPress={ () =>{
               navigation.navigate('DescripcionCuentos',{id:obj.id_contenido})
@@ -59,12 +59,13 @@ const Cuentos =({navigation})=>{
       fontSize: 20
     },
     fondo: {
-    flexDirection:'row',
-    flexWrap:'wrap',
+    alignContent:'center',
       flex: 1,
+      
+  
     },
     margen:{
         marginTop: '25%',
-        flexDirection:'row'
+        
     }
   });

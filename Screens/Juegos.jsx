@@ -67,6 +67,6 @@ const Juegos =({navigation})=>{
     },
     margen:{
         marginTop: '25%',
-        flexDirection:'row'
+       
     }
   });
