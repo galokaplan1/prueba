@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, ImageBackground} from 'react-native';
+import { StyleSheet, Text, View, Image, ImageBackground, ScrollView} from 'react-native';
 import { TabRouter, useNavigation } from '@react-navigation/native';
 import Boton from '../components/Boton';
 import { useEffect,useState }from 'react';
@@ -22,16 +22,16 @@ const DescripcionCuentos =({navigation, route})=>{
   navigation = useNavigation();
 
   return (
-    <ImageBackground source={require("../assets/fondo.jpg")} resizeMode="cover"  style={styles.image} >
+    <ImageBackground source={require("../assets/fondo.jpg")} resizeMode="strech"  style={styles.image} >
     <View style={styles.fondo}>
-      <View style={styles.margen}>
+      <ScrollView style={styles.margen}>
         <Carta style={styles.cartita}
          title={descuentos.titulo}
          text={descuentos.descripcion}
         >
-
         </Carta>
-      </View>
+        
+        </ScrollView>
 
     </View>
 </ImageBackground>
@@ -67,7 +67,7 @@ const DescripcionCuentos =({navigation, route})=>{
       flex: 1,
     },
     margen:{
-        marginTop: '20%'
+        marginTop: '0%'
     },
     cartita:{
 

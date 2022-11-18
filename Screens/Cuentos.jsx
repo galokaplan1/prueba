@@ -65,7 +65,7 @@ const Cuentos =({navigation})=>{
   
     },
     margen:{
-        marginTop: '25%',
+        marginTop: 25
         
     }
   });

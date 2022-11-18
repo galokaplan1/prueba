@@ -1,5 +1,5 @@
 import React  from "react";
-import { Text , StyleSheet } from 'react-native';
+import { Text , StyleSheet , ScrollView} from 'react-native';
 import {Card, Title ,Paragraph } from 'react-native-paper';
   
 const Carta = (props) => {
@@ -7,14 +7,16 @@ const Carta = (props) => {
     const { title, text } = props
       
     return(
-         
+       
       <Card style={Styles.cartita}>
       <Card.Content style={Styles.container}>
+      <ScrollView>  
         <Title style={Styles.title}>{title}</Title>
         <Paragraph style={Styles.paragraph}>{text} </Paragraph>
+        </ScrollView>
       </Card.Content>
     </Card>
-         
+    
     )
 }
 
@@ -39,7 +41,6 @@ const Styles = StyleSheet.create({
 paragraph: {
 fontSize: 14,
 color:'white', 
-textAlign: 'center',
 paddingLeft: 2,
 paddingHorizontal: 2,
 paddingBottom :12,
@@ -53,7 +54,7 @@ fontSize: 33,
 textAlign: 'center',
 padding: 10,
 marginTop:5,
-color:'#483d8b'
+color:'#ffd700'
     
 },
 cartita:{
